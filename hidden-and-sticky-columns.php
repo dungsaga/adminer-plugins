@@ -10,6 +10,7 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 
 	function tablesPrint($tables) {
 	?>
+	<style> #menu { z-index: 2 } thead { position: sticky; z-index: 1 } </style>
 	<style id='hiddens'></style>
 	<style id='stickies'></style>
 	<script <?php echo Adminer\nonce(); ?>>
