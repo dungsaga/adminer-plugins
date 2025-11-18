@@ -40,11 +40,12 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 				}
 			}
 			let left = getComputedStyle(qs('#menu')).position === 'fixed' ? qs('#menu').clientWidth : 0 // avoid overlapping with left sidebar
+			const bgColor = getComputedStyle(document.body).backgroundColor // sticky columns need background color (default is transparent)
 			qs('#stickies').innerHTML = ''
 			for (const col in stickyCols) {
 				if (stickyCols[col] && !hiddenCols[col]) {
 					qs('#stickies').innerHTML += ' #table th:nth-child('+col+') { z-index: 1; position: sticky; left: '+left+'px }'
-						+' #table td:nth-child('+col+') { background: rgba(240,240,240,0.9); position: sticky; left: '+left+'px }'
+						+' #table td:nth-child('+col+') { background: '+bgColor+'; opacity: 0.9; position: sticky; left: '+left+'px }'
 					left += qs('#table th:nth-child('+col+')').clientWidth // continue after current sticky columns
 				}
 			}
