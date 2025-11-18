@@ -1,7 +1,7 @@
 <?php
 /**
 * Use ctrl+alt+click on column header to hide a column and alt+click to make it sticky
-* @link https://www.adminer.org/plugins/#use
+* @link https://github.com/dungsaga/adminer-plugins/blob/main/hidden-and-sticky-columns.php
 * @author Dung.Saga, https://github.com/dungsaga
 * @license https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
 */
