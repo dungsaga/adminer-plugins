@@ -1,6 +1,7 @@
 <?php
 /**
 * Use ctrl+alt+click on column header to hide a column and alt+click to make it sticky
+* Use ctrl+alt+click or alt+click on first header cell to reset hidden or sticky columns
 * @link https://github.com/dungsaga/adminer-plugins/blob/main/hidden-and-sticky-columns.php
 * @author Dung.Saga, https://github.com/dungsaga
 * @license https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
