@@ -26,7 +26,7 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 					e.stopPropagation()
 				} else if (e.altKey) { // when alt+click
 					if (col === 1) stickyCols = [] // make all columns non-sticky
-					else stickyCols[col] = stickyCols[col] ? null : e.target.clientWidth // or make a column sticky/non-sticky
+					else stickyCols[col] = !stickyCols[col] // or make a column sticky/non-sticky
 					updateCols(hiddenCols, stickyCols)
 					e.stopPropagation()
 				}
@@ -45,7 +45,7 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 				if (stickyCols[col] && !hiddenCols[col]) {
 					qs('#stickies').innerHTML += ' #table th:nth-child('+col+') { z-index: 1; position: sticky; left: '+left+'px }'
 						+' #table td:nth-child('+col+') { background: rgba(240,240,240,0.9); position: sticky; left: '+left+'px }'
-					left += stickyCols[col]
+					left += qs('#table th:nth-child('+col+')').clientWidth // continue after current sticky columns
 				}
 			}
 		}
