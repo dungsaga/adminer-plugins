@@ -3,7 +3,6 @@
 * Use ctrl+alt+click on column header to hide a column and alt+click to make it sticky
 * @link https://www.adminer.org/plugins/#use
 * @author Dung.Saga, https://github.com/dungsaga
-* @license https://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
 * @license https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
 */
 class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
