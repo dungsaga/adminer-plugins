@@ -39,7 +39,7 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 					qs('#hiddens').innerHTML += ' #table th:nth-child('+col+'), #table td:nth-child('+col+') { display: none }'
 				}
 			}
-			let left = qs('#content').offsetLeft
+			let left = getComputedStyle(qs('#menu')).position === 'fixed' ? qs('#menu').clientWidth : 0 // avoid overlapping with left sidebar
 			qs('#stickies').innerHTML = ''
 			for (const col in stickyCols) {
 				if (stickyCols[col] && !hiddenCols[col]) {
