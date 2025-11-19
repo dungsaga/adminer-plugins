@@ -11,8 +11,8 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 	function tablesPrint($tables) {
 	?>
 	<style> #menu { z-index: 2 } thead { position: sticky; z-index: 1 } </style>
-	<style id='hiddens'></style>
-	<style id='stickies'></style>
+	<style id='hiddenCols'></style>
+	<style id='stickyCols'></style>
 	<script <?php echo Adminer\nonce(); ?>>
 	document.addEventListener('DOMContentLoaded', () => {
 		let stickyCols = []
@@ -34,24 +34,24 @@ class AdminerHiddenAndStickyColumns extends Adminer\Plugin {
 			})
 		})
 		function updateCols(hiddenCols, stickyCols) {
-			qs('#hiddens').innerHTML = ''
+			qs('#hiddenCols').innerHTML = ''
 			for (const col in hiddenCols) {
 				if (hiddenCols[col]) {
-					qs('#hiddens').innerHTML += ' #table th:nth-child('+col+'), #table td:nth-child('+col+') { display: none }'
+					qs('#hiddenCols').innerHTML += ' #table th:nth-child('+col+'), #table td:nth-child('+col+') { display: none }'
 				}
 			}
 			let left = getComputedStyle(qs('#menu')).position === 'fixed' ? qs('#menu').clientWidth : 0 // avoid overlapping with left sidebar
 			const bgColor = getComputedStyle(document.body).backgroundColor // sticky columns need background color (default is transparent)
-			qs('#stickies').innerHTML = ''
+			qs('#stickyCols').innerHTML = ''
 			for (const col in stickyCols) {
 				if (stickyCols[col] && !hiddenCols[col]) {
-					qs('#stickies').innerHTML += ' #table th:nth-child('+col+') { z-index: 1; position: sticky; left: '+left+'px }'
+					qs('#stickyCols').innerHTML += ' #table th:nth-child('+col+') { z-index: 1; position: sticky; left: '+left+'px }'
 						+' #table td:nth-child('+col+') { background: '+bgColor+'; opacity: 0.9; position: sticky; left: '+left+'px }'
 					left += qs('#table th:nth-child('+col+')').clientWidth // continue after current sticky columns
 				}
 			}
 		}
-	});
+	})
 	</script>
 	<?php
 	}
