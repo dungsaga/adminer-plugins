@@ -10,23 +10,39 @@ class AdminerMarkRepeatedValues extends Adminer\Plugin {
 	function tablesPrint($tables) {
 	?>
 	<style>
-		.dups0 { background: lightyellow }
-		.dups1 { background: lightblue }
-		.dups2 { background: lightcyan }
-		.dups3 { background: lightsteelblue }
+		#table td.dups1  { background: aquamarine }
+		#table td.dups2  { background: cornsilk }
+		#table td.dups3  { background: khaki }
+		#table td.dups4  { background: lavender }
+		#table td.dups5  { background: lavenderblush }
+		#table td.dups6  { background: lemonchiffon }
+		#table td.dups7  { background: lightcyan }
+		#table td.dups8  { background: lightskyblue }
+		#table td.dups9  { background: linen }
+		#table td.dups10 { background: mistyrose }
+		#table td.dups11 { background: moccasin }
+		#table td.dups12 { background: palegoldenrod }
+		#table td.dups13 { background: palegreen }
+		#table td.dups14 { background: paleturquoise }
+		#table td.dups15 { background: papayawhip }
+		#table td.dups16 { background: peachpuff }
+		#table td.dups17 { background: pink }
+		#table td.dups18 { background: plum }
+		#table td.dups19 { background: thistle }
+		#table td.dups20 { background: wheat }
 	</style>
 	<script <?php echo Adminer\nonce(); ?>>
 	document.addEventListener('DOMContentLoaded', () => {
-		const classes = ['dups0', 'dups1', 'dups2', 'dups3',] // marker classes defined in CSS
+		const classes = Array.from({ length: 21 }, (e, i) => 'dups' + i) // marker classes (dups0, dups1, dups2, ...)
 		let markerIdx = 0
 		qs('#table tbody').addEventListener('click', function(e) {
 			if (e.altKey && e.target.cellIndex) { // when alt+click on a column
 				const col = e.target.cellIndex + 1
-				const markerClass = classes[markerIdx++ % classes.length] // select next marker class
+				const markerClass = classes[++markerIdx % classes.length] // select next marker class
 				qsa('td:nth-child('+col+')', this).forEach(td => { // check cells in a column
 					if (td.innerText === e.target.innerText) {
 						td.classList.remove(...classes)
-						td.classList.add(markerClass)
+						td.classList.add(markerClass) // "dups0" means no marker
 					}
 				})
 				e.stopPropagation()
