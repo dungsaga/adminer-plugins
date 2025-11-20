@@ -1,5 +1,5 @@
 <?php
-/** Display the first CHAR/VARCHAR/ENUM column from the table referenced by a foreign key
+/** Display the first char/varchar/enum column from the table referenced by a foreign key
 * @category Plugin
 * @link https://github.com/dungsaga/adminer-plugins/blob/main/name-from-referenced-row.php
 * @author Dung.Saga, https://github.com/dungsaga
