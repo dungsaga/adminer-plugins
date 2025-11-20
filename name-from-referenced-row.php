@@ -1,5 +1,5 @@
-<?php
-/** Display the first char/varchar/enum column from the table referenced by a foreign key
+<?php /**
+* Display the first char/varchar/enum column from the table referenced by a foreign key
 * @category Plugin
 * @link https://github.com/dungsaga/adminer-plugins/blob/main/name-from-referenced-row.php
 * @author Dung.Saga, https://github.com/dungsaga
@@ -16,7 +16,7 @@ class AdminerNameFromReferencedRow
     * @param Field $field
     * @param string $original original value before applying editVal() and escaping
     */
-    function selectVal( ?string $val, ?string $link, array $field, ?string $original ) : ?string
+    function selectVal( ?string &$val, ?string $link, array $field, ?string $original )
     {
         list( $table, $where ) = self::parseLink( $link );
         if( $table && $where && !preg_match( '/var/', $field['type'] ) )
