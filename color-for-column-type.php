@@ -1,10 +1,9 @@
-<?php
-/**
+<?php /**
 * Show different color for each column type (number, datetime, enum ...)
 * @category Plugin
 * @link https://github.com/dungsaga/adminer-plugins/blob/main/color-for-column-type.php
 * @author by Dung.Saga, https://github.com/dungsaga
-* @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2 (one or other)
+* @license http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
 */
 class AdminerColorForColumnType
 {
