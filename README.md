@@ -6,6 +6,7 @@ Some not-so-awesome plugins for the awesome Adminer
 * `hidden-and-sticky-columns.php`: Use ctrl+alt+click on column header to hide a column and alt+click to make it sticky
 * `mark-repeated-values.php`: Use alt+click to highlight the same values in other cells of a column (up to 20 colors)
 * `color-for-column-type.php`: Show different color for each column type (number, datetime, enum ...)
+* `name-from-referenced-row.php`: Display the first char/varchar/enum column from the table referenced by a foreign key
 
 # screenshots
 
