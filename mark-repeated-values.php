@@ -1,6 +1,5 @@
 <?php
-/**
-* Use alt+click to highlight the same values in other cells of a column (up to 4 colors)
+/** Use alt+click to highlight the same values in other cells of a column (up to 20 colors)
 * @link https://github.com/dungsaga/adminer-plugins/blob/main/mark-repeated-values.php
 * @author Dung.Saga, https://github.com/dungsaga
 * @license https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3
